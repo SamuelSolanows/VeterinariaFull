@@ -6,19 +6,29 @@
     android:layout_height="match_parent"
     tools:context=".Mascota">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/RecicleMascota"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="20dp"
-        tools:listitem="@layout/item_mascota"
-        tools:layout_editor_absoluteX="20dp"
-        tools:layout_editor_absoluteY="20dp" />
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/RecicleMascota"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            tools:layout_editor_absoluteX="20dp"
+            tools:layout_editor_absoluteY="20dp"
+            tools:listitem="@layout/item_mascota" />
+    </ScrollView>
+
 
     <Button
         android:id="@+id/btnAgregarMascota"
-        android:layout_width="81dp"
-        android:layout_height="67dp"
+        android:layout_width="61dp"
+        android:layout_height="61dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/add"
         android:textSize="20sp"

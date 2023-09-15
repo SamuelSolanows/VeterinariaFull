@@ -7,11 +7,26 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
+import com.example.veterinariafull.Adapter.RazaAdapter
+import com.example.veterinariafull.DB.Entitys.MascotaEntity
+import com.example.veterinariafull.DB.Entitys.RazaEntity
 import com.example.veterinariafull.DB.Entitys.TipoEntity
+import com.example.veterinariafull.DB.Entitys.VacunaEntity
+import com.example.veterinariafull.DB.Iterfaces.IMascota
+import com.example.veterinariafull.DB.Iterfaces.IRaza
+import com.example.veterinariafull.DB.Iterfaces.ITipo
+import com.example.veterinariafull.DB.Iterfaces.IVacuna
+import com.example.veterinariafull.Mascota
 
 abstract class DBConexion() : RoomDatabase() {
+    abstract fun RazaDao(): IRaza
+    abstract fun TipoDao(): ITipo
+    abstract fun VacunaDao(): IVacuna
+    abstract fun MascotaDao(): IMascota
 
-    companion object {
+    companion
+
+    object {
         private var INSTA: DBConexion? = null
         fun Getdatabase(context: Context): DBConexion {
             if (INSTA != null) {
