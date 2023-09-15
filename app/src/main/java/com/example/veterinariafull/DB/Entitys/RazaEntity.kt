@@ -21,6 +21,10 @@ data class RazaEntity(
     @ColumnInfo(name = COLM_NAME) var Nombre: String,
     @ColumnInfo(name = COLM_IDTIPO) var IdTipo: Long
 ) {
+    override fun toString(): String {
+        return COLM_NAME
+    }
+
     companion object {
         const val NOMBRE_TABLA = "Raza"
         const val COLM_ID = "Id"
