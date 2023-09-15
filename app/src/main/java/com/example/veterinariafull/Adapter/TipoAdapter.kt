@@ -1,6 +1,5 @@
 package com.example.veterinariafull.Adapter
 
-import android.app.Application
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -29,7 +28,7 @@ class TipoAdapter(var Tipo: MutableList<TipoEntity>) : RecyclerView.Adapter<Tipo
         tipo.apply {
             holder.binding.apply {
                 txtTipo.text = Nombre
-                txtNumero.text = Id.toString()
+                txtNumero.text= "$Id. "
             }
         }
     }
