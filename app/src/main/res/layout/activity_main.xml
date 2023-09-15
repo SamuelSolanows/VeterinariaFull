@@ -8,7 +8,7 @@
     tools:context=".MainActivity">
 
     <ImageView
-        android:layout_margin="20dp"
+        android:layout_marginTop="10dp"
         android:layout_gravity="center"
         android:layout_width="250dp"
         android:layout_height="250dp"
@@ -17,15 +17,15 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="bottom"
         android:layout_margin="20dp"
+        android:gravity="center"
         android:orientation="vertical">
 
         <Button
             android:id="@+id/btnTipo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:layout_margin="10dp"
             android:fontFamily="@font/letra"
             android:text="Tipo"
             android:textSize="25sp" />
@@ -34,7 +34,7 @@
             android:id="@+id/btnRaza"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:layout_margin="10dp"
             android:fontFamily="@font/letra"
             android:text="Raza"
             android:textSize="25sp" />
@@ -43,7 +43,7 @@
             android:id="@+id/btnVacuna"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:layout_margin="10dp"
             android:fontFamily="@font/letra"
             android:text="Vacuna"
             android:textSize="25sp" />
@@ -52,7 +52,7 @@
             android:id="@+id/btnMascota"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:layout_margin="10dp"
             android:fontFamily="@font/letra"
             android:text="Mascotas"
             android:textSize="25sp" />
