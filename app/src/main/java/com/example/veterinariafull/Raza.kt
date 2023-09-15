@@ -16,15 +16,14 @@ class Raza : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityRazaBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         LlenarRecycle()
-
     }
 
     private fun LlenarRecycle() {
         binding.RecucleRaza.layoutManager = LinearLayoutManager(this)
-        binding.RecucleRaza.adapter =
-            RazaAdapter(DBConexion.Getdatabase(this@Raza).RazaDao().GetAll().toMutableList())
-
+        CoroutineScope(Dispatchers.IO).launch {
+            binding.RecucleRaza.adapter =
+                RazaAdapter(DBConexion.Getdatabase(this@Raza).RazaDao().GetAll().toMutableList())
+        }
     }
 }
