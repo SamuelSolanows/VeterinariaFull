@@ -13,10 +13,9 @@ class TipoAdapter(var Tipo: MutableList<TipoEntity>) : RecyclerView.Adapter<Tipo
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
         return Holder(
-            ItemTipoBinding.bind(
-                LayoutInflater.from(parent.context).inflate(R.layout.item_tipo, parent, false)
-            )
+            ItemTipoBinding.inflate(LayoutInflater.from(parent.context))
         )
+
     }
 
     override fun getItemCount(): Int {
@@ -28,7 +27,7 @@ class TipoAdapter(var Tipo: MutableList<TipoEntity>) : RecyclerView.Adapter<Tipo
         tipo.apply {
             holder.binding.apply {
                 txtTipo.text = Nombre
-                txtNumero.text= "$Id. "
+                txtNumero.text = "$Id. "
             }
         }
     }

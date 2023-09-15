@@ -3,11 +3,13 @@ package com.example.veterinariafull.DB
 
 import android.content.ContentValues
 import android.content.Context
+import androidx.room.Database
 import androidx.room.OnConflictStrategy
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.example.veterinariafull.Adapter.RazaAdapter
+import com.example.veterinariafull.DB.Entitys.ControlVacunaEntity
 import com.example.veterinariafull.DB.Entitys.MascotaEntity
 import com.example.veterinariafull.DB.Entitys.RazaEntity
 import com.example.veterinariafull.DB.Entitys.TipoEntity
@@ -18,6 +20,10 @@ import com.example.veterinariafull.DB.Iterfaces.ITipo
 import com.example.veterinariafull.DB.Iterfaces.IVacuna
 import com.example.veterinariafull.Mascota
 
+@Database(
+    entities = [TipoEntity::class, RazaEntity::class, VacunaEntity::class, ControlVacunaEntity::class,MascotaEntity::class],
+    version = 1
+)
 abstract class DBConexion() : RoomDatabase() {
     abstract fun RazaDao(): IRaza
     abstract fun TipoDao(): ITipo
@@ -27,6 +33,7 @@ abstract class DBConexion() : RoomDatabase() {
     companion
 
     object {
+        @Volatile
         private var INSTA: DBConexion? = null
         fun Getdatabase(context: Context): DBConexion {
             if (INSTA != null) {

@@ -14,7 +14,6 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         CambiuarActividad()
-        DBConexion.Getdatabase(this)
     }
 
     fun CambiuarActividad() {

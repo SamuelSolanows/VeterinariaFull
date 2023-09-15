@@ -14,9 +14,7 @@ class VacunaAdapter(var Vacuna: MutableList<VacunaEntity>) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
         return Holder(
-            ItemVacunaBinding.bind(
-                LayoutInflater.from(parent.context).inflate(R.layout.item_vacuna, parent, false)
-            )
+            ItemVacunaBinding.inflate(LayoutInflater.from(parent.context))
         )
     }
 

@@ -21,10 +21,10 @@ interface IRaza {
     fun GetById(Id: Long): RazaEntity?
 
     @Update
-    fun Actualizar(raza: RazaEntity): Long
+    fun Actualizar(raza: RazaEntity)
 
     @Delete
-    fun Eliminar(raza: RazaEntity): Long
+    fun Eliminar(raza: RazaEntity)
 
     @Query("SELECT * FROM ${RazaEntity.NOMBRE_TABLA} WHERE ${RazaEntity.COLM_ID}=:Id")
     fun EliminarById(Id: Long): Long

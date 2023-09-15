@@ -16,7 +16,7 @@ class Tipo : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityTipoBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        LlenarRecycle()
+       LlenarRecycle()
     }
 
     fun LlenarRecycle() {

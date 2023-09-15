@@ -20,10 +20,10 @@ interface ITipo {
     fun GetById(Id: Long): TipoEntity?
 
     @Update
-    fun Actualizar(tipo: TipoEntity): Long
+    fun Actualizar(tipo: TipoEntity)
 
     @Delete
-    fun Eliminar(tipo: TipoEntity): Long
+    fun Eliminar(tipo: TipoEntity)
 
     @Query("SELECT * FROM ${TipoEntity.NOMBRE_TABLA} WHERE ${TipoEntity.COLM_ID}=:Id")
     fun EliminarById(Id: Long): Long

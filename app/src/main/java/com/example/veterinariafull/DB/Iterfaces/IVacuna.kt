@@ -20,10 +20,10 @@ interface IVacuna {
     fun GetById(Id: Long): VacunaEntity?
 
     @Update
-    fun Actualizar(vacuna: VacunaEntity): Long
+    fun Actualizar(vacuna: VacunaEntity)
 
     @Delete
-    fun Eliminar(vacuna: VacunaEntity): Long
+    fun Eliminar(vacuna: VacunaEntity)
 
     @Query("SELECT * FROM ${VacunaEntity.NOMBRE_TABLA} WHERE ${VacunaEntity.COLM_ID}=:Id")
     fun EliminarById(Id: Long): Long

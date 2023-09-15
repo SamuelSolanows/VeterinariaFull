@@ -21,10 +21,10 @@ interface IMascota {
     fun GetById(Id: Long): MascotaEntity?
 
     @Update(onConflict = IGNORE)
-    fun Actualizar(Mascota: MascotaEntity): Long
+    fun Actualizar(Mascota: MascotaEntity)
 
     @Delete
-    fun Eliminar(Mascota: MascotaEntity): Long
+    fun Eliminar(Mascota: MascotaEntity)
 
     @Query("SELECT * FROM ${MascotaEntity.NOMBRE_TABLA} WHERE ${MascotaEntity.COLM_ID} = :Id")
     fun EliminarById(Id: Long): Long

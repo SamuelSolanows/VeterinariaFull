@@ -13,9 +13,7 @@ class RazaAdapter(var Raza: MutableList<RazaEntity>) : RecyclerView.Adapter<Raza
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
         return Holder(
-            ItemRazaBinding.bind(
-                LayoutInflater.from(parent.context).inflate(R.layout.item_raza, parent, false)
-            )
+            ItemRazaBinding.inflate(LayoutInflater.from(parent.context))
         )
     }
 
