@@ -21,7 +21,7 @@ import com.example.veterinariafull.DB.Iterfaces.IVacuna
 import com.example.veterinariafull.Mascota
 
 @Database(
-    entities = [TipoEntity::class, RazaEntity::class, VacunaEntity::class, ControlVacunaEntity::class,MascotaEntity::class],
+    entities = [TipoEntity::class, RazaEntity::class, VacunaEntity::class, ControlVacunaEntity::class, MascotaEntity::class],
     version = 1
 )
 abstract class DBConexion() : RoomDatabase() {
@@ -51,6 +51,23 @@ abstract class DBConexion() : RoomDatabase() {
                             db.insert(TipoEntity.NOMBRE_TABLA, OnConflictStrategy.ABORT,
                                 ContentValues().apply {
                                     put(TipoEntity.COLM_NOMBRE, tipo.Nombre)
+
+                                }
+                            )
+                        }
+                        var list2 = listOf(
+                            RazaEntity(0, "Chinchilla", 1),
+                            RazaEntity(0, "Bengala", 1),
+                            RazaEntity(0, "Ocicat", 1),
+                            RazaEntity(0, "Chihuahua", 2),
+                            RazaEntity(0, "Pug", 2),
+                            RazaEntity(0, "Alabai", 2)
+                        )
+                        list2.forEach { tipo ->
+                            db.insert(RazaEntity.NOMBRE_TABLA, OnConflictStrategy.ABORT,
+                                ContentValues().apply {
+                                    put(RazaEntity.COLM_NAME, tipo.Nombre)
+                                    put(RazaEntity.COLM_IDTIPO, tipo.IdTipo)
 
                                 }
                             )

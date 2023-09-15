@@ -40,7 +40,6 @@
         android:layout_margin="20dp"
         android:drawableEnd="@drawable/calendar"
         android:drawablePadding="15dp"
-        android:enabled="false"
         android:fontFamily="@font/letra"
         android:hint="Fecha De nacimineto" />
 
