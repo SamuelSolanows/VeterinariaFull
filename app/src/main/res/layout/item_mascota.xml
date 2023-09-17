@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="280dp"
     android:layout_margin="15dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:fontFamily="@font/letra"
+        android:padding="8dp"
+        android:text="Nombre:"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/txtNombreMascota"
@@ -12,7 +22,18 @@
         android:fontFamily="@font/letra"
         android:padding="8dp"
         android:text="nombre"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:translationX="90dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:fontFamily="@font/letra"
+        android:padding="8dp"
+        android:text="Edad:"
+        android:textSize="20sp"
+        android:translationY="50dp" />
 
     <TextView
         android:id="@+id/txtEdad"
@@ -22,7 +43,20 @@
         android:fontFamily="@font/letra"
         android:padding="8dp"
         android:text="edad"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:translationX="90dp"
+        android:translationY="50dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:fontFamily="@font/letra"
+        android:padding="8dp"
+        android:text="Tipo:"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:translationY="100dp" />
 
     <TextView
         android:id="@+id/txtTipo"
@@ -32,7 +66,20 @@
         android:fontFamily="@font/letra"
         android:padding="8dp"
         android:text="tipo"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:translationX="90dp"
+        android:translationY="100dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:fontFamily="@font/letra"
+        android:padding="8dp"
+        android:text="Raza:"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:translationY="150dp" />
 
     <TextView
         android:id="@+id/txtRaza"
@@ -42,28 +89,37 @@
         android:fontFamily="@font/letra"
         android:padding="8dp"
         android:text="raza"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:translationX="90dp"
+        android:translationY="150dp" />
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center|end">
+        android:layout_gravity="bottom|center"
 
+android:layout_marginBottom="10dp"        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/btnVer"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/see" />
 
         <ImageView
             android:id="@+id/btnEditar"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_marginEnd="10dp"
             android:src="@drawable/edit" />
 
         <ImageView
             android:id="@+id/btnEliminar"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_marginEnd="10dp"
             android:src="@drawable/delete" />
     </LinearLayout>
 
 
-</LinearLayout>
+</FrameLayout>

@@ -20,9 +20,10 @@ class Tipo : AppCompatActivity() {
     }
 
     fun LlenarRecycle() {
-        binding.apply {
-            RecycleTipo.layoutManager = LinearLayoutManager(this@Tipo)
-            CoroutineScope(Dispatchers.IO).launch {
+        CoroutineScope(Dispatchers.IO).launch {
+            binding.apply {
+                RecycleTipo.layoutManager = LinearLayoutManager(this@Tipo)
+
                 RecycleTipo.adapter = TipoAdapter(
                     DBConexion.Getdatabase(this@Tipo).TipoDao().GetAll().toMutableList()
                 )

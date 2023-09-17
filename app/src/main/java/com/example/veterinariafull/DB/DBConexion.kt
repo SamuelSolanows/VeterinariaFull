@@ -35,22 +35,24 @@ abstract class DBConexion() : RoomDatabase() {
     object {
         @Volatile
         private var INSTA: DBConexion? = null
-        fun Getdatabase(context: Context): DBConexion {
+        fun Getdatabase(context: Context? = null): DBConexion {
             if (INSTA != null) {
                 return INSTA!!
             }
-            INSTA = Room.databaseBuilder(context.applicationContext, DBConexion::class.java, "db")
-                .addCallback(object : RoomDatabase.Callback() {
-                    override fun onCreate(db: SupportSQLiteDatabase) {
-                        super.onCreate(db)
-                        var list = listOf(
-                            TipoEntity(0, "Gato"),
-                            TipoEntity(0, "Perro")
-                        )
-                        list.forEach { tipo ->
-                            db.insert(TipoEntity.NOMBRE_TABLA, OnConflictStrategy.ABORT,
-                                ContentValues().apply {
-                                    put(TipoEntity.COLM_NOMBRE, tipo.Nombre)
+            if (context != null) {
+                INSTA =
+                    Room.databaseBuilder(context.applicationContext, DBConexion::class.java, "db")
+                        .addCallback(object : RoomDatabase.Callback() {
+                            override fun onCreate(db: SupportSQLiteDatabase) {
+                                super.onCreate(db)
+                                var list = listOf(
+                                    TipoEntity(0, "Gato"),
+                                    TipoEntity(0, "Perro")
+                                )
+                                list.forEach { tipo ->
+                                    db.insert(TipoEntity.NOMBRE_TABLA, OnConflictStrategy.ABORT,
+                                        ContentValues().apply {
+                                            put(TipoEntity.COLM_NOMBRE, tipo.Nombre)
 
                                 }
                             )
@@ -69,11 +71,13 @@ abstract class DBConexion() : RoomDatabase() {
                                     put(RazaEntity.COLM_NAME, tipo.Nombre)
                                     put(RazaEntity.COLM_IDTIPO, tipo.IdTipo)
 
+                                        }
+                                    )
                                 }
-                            )
-                        }
-                    }
-                }).build()
+                            }
+                        }).build()
+            }
+
             return INSTA!!
 
         }
