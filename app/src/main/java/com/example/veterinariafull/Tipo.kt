@@ -16,18 +16,23 @@ class Tipo : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityTipoBinding.inflate(layoutInflater)
         setContentView(binding.root)
-       LlenarRecycle()
+        LlenarRecycle()
     }
 
     fun LlenarRecycle() {
         CoroutineScope(Dispatchers.IO).launch {
-            binding.apply {
-                RecycleTipo.layoutManager = LinearLayoutManager(this@Tipo)
 
-                RecycleTipo.adapter = TipoAdapter(
-                    DBConexion.Getdatabase(this@Tipo).TipoDao().GetAll().toMutableList()
-                )
+            var get = DBConexion.Getdatabase(this@Tipo).TipoDao().GetAll().toMutableList()
+            runOnUiThread {
+                binding.apply {
+                    RecycleTipo.layoutManager = LinearLayoutManager(this@Tipo)
+
+                    RecycleTipo.adapter = TipoAdapter(
+                        get
+                    )
+                }
             }
+
         }
     }
 }
